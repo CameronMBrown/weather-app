@@ -7,6 +7,7 @@ import {
   FaSnowflake,
   FaSmog,
   FaBolt,
+  FaQuestion,
 } from "react-icons/fa"
 
 const getWeatherIcon = (description) => {
