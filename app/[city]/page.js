@@ -49,7 +49,7 @@ const CityWeatherPage = async ({ params }) => {
   let forcast = await fetchForcast(city.lat, city.lng, process.env.API_KEY)
 
   // only concerned with the weather at noon each day
-  forcast.list = forcast?.list.filter((item) =>
+  forcast.list = forcast?.list?.filter((item) =>
     item.dt_txt.includes("12:00:00")
   )
 
