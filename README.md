@@ -2,6 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+If you have a Vercel account, you can view the app with this public URL
+https://weather-ocyizt9a7-cameron-browns-projects-1c67ac2b.vercel.app/
+
 First, run the development server:
 
 ```bash
