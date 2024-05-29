@@ -22,7 +22,7 @@ async function fetchCurrentWeather(lat, lng, apiKey) {
   return await res.json()
 }
 
-async function fetchForcast(lat, lng, apiKey) {
+async function fetchForecast(lat, lng, apiKey) {
   const res = await fetch(
     `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&appid=${apiKey}&units=metric`
   )
@@ -46,17 +46,21 @@ const CityWeatherPage = async ({ params }) => {
     city.lng,
     process.env.API_KEY
   )
-  let forcast = await fetchForcast(city.lat, city.lng, process.env.API_KEY)
+  let forecast = await fetchForecast(city.lat, city.lng, process.env.API_KEY)
 
-  // only concerned with the weather at noon each day
-  forcast.list = forcast?.list?.filter((item) =>
-    item.dt_txt.includes("12:00:00")
-  )
+  if (forecast?.list) {
+    // Only concerned with the weather at noon each day
+    forecast.list = forecast.list.filter((item) =>
+      item.dt_txt.includes("12:00:00")
+    )
+  } else {
+    forecast.list = []
+  }
 
   return (
     <main>
       <SelectLocation current={city.slug} />
-      <WeatherData current={currentWeather} forcast={forcast} />
+      <WeatherData current={currentWeather} forecast={forecast} />
     </main>
   )
 }

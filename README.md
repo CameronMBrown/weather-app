@@ -25,7 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 This is a basic weather app built with Next.js, Scss and the OpenWeather API
 https://openweathermap.org/api
 
-The app displays a breif summary of the current weather conditions and the forcasted temperature for the next 3 days.
+The app displays a breif summary of the current weather conditions and the forecasted temperature for the next 3 days.
 
 The app has a responsive design and should adjust nicely to your devices' screen size.
 

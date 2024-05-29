@@ -14,8 +14,8 @@
   grid-template-rows: 8fr 7fr;
   grid-template-columns: 4fr 4fr 3fr;
   grid-template-areas:
-    "city city forcast"
-    "current conditions forcast";
+    "city city forecast"
+    "current conditions forecast";
   grid-gap: 10px;
 
   .city-name {
@@ -71,8 +71,8 @@
     }
   }
 
-  .three-day-forcast {
-    grid-area: forcast;
+  .three-day-forecast {
+    grid-area: forecast;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

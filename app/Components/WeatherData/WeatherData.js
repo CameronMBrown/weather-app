@@ -22,7 +22,7 @@ function getDayOfWeek(timestamp) {
   return daysOfWeek[date.getUTCDay()]
 }
 
-const WeatherData = ({ current, forcast }) => {
+const WeatherData = ({ current, forecast }) => {
   return (
     <div className="weather-grid">
       <Card className="city-name black">
@@ -36,18 +36,24 @@ const WeatherData = ({ current, forcast }) => {
         <WeatherIcon description={current.weather[0].description} />
         <p>{current.weather[0].description}</p>
       </Card>
-      <Card className="three-day-forcast">
+      <Card className="three-day-forecast">
         <div>
           <p>Tomorrow</p>
-          <p className="temperature">{forcast.list[0].main.temp.toFixed(0)}°</p>
+          <p className="temperature">
+            {forecast.list[0].main.temp.toFixed(0)}°
+          </p>
         </div>
         <div>
-          <p>{getDayOfWeek(forcast.list[1].dt)}</p>
-          <p className="temperature">{forcast.list[1].main.temp.toFixed(0)}°</p>
+          <p>{getDayOfWeek(forecast.list[1].dt)}</p>
+          <p className="temperature">
+            {forecast.list[1].main.temp.toFixed(0)}°
+          </p>
         </div>
         <div>
-          <p>{getDayOfWeek(forcast.list[2].dt)}</p>
-          <p className="temperature">{forcast.list[2].main.temp.toFixed(0)}°</p>
+          <p>{getDayOfWeek(forecast.list[2].dt)}</p>
+          <p className="temperature">
+            {forecast.list[2].main.temp.toFixed(0)}°
+          </p>
         </div>
       </Card>
     </div>
