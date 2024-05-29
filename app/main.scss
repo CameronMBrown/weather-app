@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+body {
+  padding: 10%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 90vw;
+}

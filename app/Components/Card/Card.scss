@@ -1,0 +1,27 @@
+$white-text: #ffffff;
+$black-background: #000000;
+$orange-background: #eb6e2d;
+$blue-background: #d7dcfa;
+$default-color: #e0dcd7;
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $default-color;
+  border-radius: 10px;
+
+  &.black {
+    color: $white-text;
+    background-color: $black-background;
+  }
+
+  &.orange {
+    color: $white-text;
+    background-color: $orange-background;
+  }
+
+  &.blue {
+    background-color: $blue-background;
+  }
+}

@@ -1,0 +1,95 @@
+@mixin temp-label {
+  font-size: 0.6rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+
+  @media (min-width: 425px) {
+    font-size: 0.9rem;
+  }
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-rows: 8fr 7fr;
+  grid-template-columns: 4fr 4fr 3fr;
+  grid-template-areas:
+    "city city forcast"
+    "current conditions forcast";
+  grid-gap: 10px;
+
+  .city-name {
+    grid-area: city;
+    font-weight: 600;
+    padding: 0.5rem 0;
+
+    h1 {
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+
+  .current-temperature {
+    grid-area: current;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    p {
+      @include temp-label();
+    }
+
+    .temperature {
+      font-size: 2rem;
+      margin: 0 0 0.75rem 0;
+
+      @media (min-width: 425px) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .conditions {
+    grid-area: conditions;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1.1rem 0;
+
+    .weather-icon {
+      width: 45%;
+      margin-bottom: 0.5rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+      @include temp-label();
+      max-width: 10ch;
+    }
+  }
+
+  .three-day-forcast {
+    grid-area: forcast;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+
+    p {
+      @include temp-label();
+    }
+
+    .temperature {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0.25rem 0 1rem 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
